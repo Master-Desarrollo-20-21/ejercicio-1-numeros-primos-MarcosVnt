@@ -1,0 +1,93 @@
+
+
+function isPrimeTeorico(number) {
+    if(number == 1){
+        return true;
+    }
+    let next = 2;
+    while(nuumber % next != 0){
+        next++;
+    }
+    return number == next
+
+}
+
+function isPrimeComunidad(number){
+    if(number == 1){
+        return true;
+    }
+
+    for(let i = 2; i < number; i++) {
+        if (number % i == 0 ) {
+            return false;
+        }
+    }
+    return true;
+
+
+}
+
+const isPrimeEs6 = num => {
+    for(let i = 2; i < num; i++)
+      if(num % i === 0) return false;
+    return num > 1;
+  }
+
+
+
+// los 50 primeros primos son 
+function addPrime() {
+
+    let prime = 0;
+    for( int i = 0 ; i < 50; i++ ){
+        if(isPrimeComunidad(i)){
+            prime += i;
+        }
+    }
+    return prime;
+}
+
+
+
+
+
+//suma de primos en 50 primeros numeros  
+
+
+//teorico 
+function sumPrime() {
+    let sumPrimes = 0 ; 
+    let primes = 0 ; 
+    let magnitude = 1 ; 
+
+    do {
+        if (isPrimeComunidad(magnitude)) {
+            primes++;
+            sumPrimes += magnitude;
+        }
+        magnitude++;
+
+    } while (primes < 50);
+        console.log("Suma de los 50 primeros primos "+ sumPrimes);
+}
+
+
+
+//mejorado negacion
+{
+    let sumPrimes = 0 ; 
+    let primes = 0 ; 
+    let magnitude = 1 ; 
+
+    do {
+        while (!isPrimeComunidad(magnitude)) {
+            magnitude++;
+        }
+        primes++;
+        sumPrimes += magnitude;
+        magitude++;
+    } while (primes < 50);
+        console.log("Suma de los 10 primeros primos "+ sumPrimes);
+}
+
+
